@@ -1,8 +1,11 @@
+/* eslint-disable react/prop-types */
 import CartItem from "./CartItem";
 import styles from "./css/Cart.module.css";
-// eslint-disable-next-line react/prop-types
+
 const Cart = ({ cartItems }) => {
-  const totalAmount = Object.values(cartItems).reduce((total, item) => total + item.price * item.count, 0);
+  const totalAmount = Object
+    .values(cartItems)
+    .reduce((total, item) => total + item.price * item.count, 0);
 
   return (
     <div className={styles.cart}>

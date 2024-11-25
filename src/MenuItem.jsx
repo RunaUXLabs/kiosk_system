@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import styles from "./css/MenuItem.module.css";
-// eslint-disable-next-line react/prop-types
+
 const MenuItem = ({ name, price, description, img, addToCart }) => {
   const imageSrc = new URL(`./assets/${img}`, import.meta.url).href;
   // 이미지를 띄우기 위해 import.meta.url 사용하기

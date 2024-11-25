@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import styles from "./css/CartItem.module.css";
-// eslint-disable-next-line react/prop-types
+
 const CartItem = ({ name, price, count }) => {
   return (
     <div className={styles.cartItem}>

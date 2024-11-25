@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import MenuItem from "./MenuItem";
 import styles from "./css/Menu.module.css";
 
@@ -23,7 +24,6 @@ const menuData = [
   },
 ];
 
-// eslint-disable-next-line react/prop-types
 const Menu = ({ addToCart }) => {
   return (
     <div className={styles.menu}>
