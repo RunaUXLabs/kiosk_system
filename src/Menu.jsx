@@ -5,6 +5,7 @@ import styles from "./css/Menu.module.css";
 const menuData = [
   {
     name: "라벤더 카페 브레베",
+    engName: "Lavender Cafe Breve",
     price: 7000,
     description: "진한 리저브 에스프레소 샷과 라벤더 향이 어우러진 부드럽고 세련된 풍미.",
     img: "20220412083026158.png",
@@ -12,12 +13,14 @@ const menuData = [
   },
   {
     name: "스파클링 시트러스 에스프레소",
+    engName: "Sparkling Citrus Espresso",
     price: 7500,
     description: "리저브 에스프레소에 상큼한 레몬과 진저에일을 더한 청량감 넘치는 커피.",
     img: "20210322093318028.jpg",
   },
   {
     name: "라즈베리 쇼콜라",
+    engName: "Raspberry chocolate Cake",
     price: 5900,
     description: "초콜릿 케이크 사이에 라즈베리를 올린 진하고 묵직한 초콜릿 케이크.",
     img: "20210325161742703.jpg",

@@ -2,27 +2,33 @@
 import CartItem from "./CartItem";
 import styles from "./css/Cart.module.css";
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, updateItemCount }) => {
   const totalAmount = Object
     .values(cartItems)
     .reduce((total, item) => total + item.price * item.count, 0);
 
   return (
-    <div className={styles.cart}>
+    <section className={styles.cart}>
       <h2>Cart</h2>
       <div>
         {Object.keys(cartItems).length === 0 ? (
-          <p>Your cart is empty</p>
+          <p>카트가 비었어요😹</p>
         ) : (
           Object.entries(cartItems).map(([name, item]) => (
-            <CartItem key={name} name={name} price={item.price} count={item.count} />
+            <CartItem
+              key={name}
+              name={name}
+              price={item.price}
+              count={item.count}
+              updateItemCount={updateItemCount}
+            />
           ))
         )}
       </div>
-      <div className={styles.total}>
+      <h3 className={styles.total}>
         Total: {totalAmount.toLocaleString()}원
-      </div>
-    </div>
+      </h3>
+    </section>
   );
 };
 

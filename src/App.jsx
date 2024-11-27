@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState } from "react";
 import Menu from "./Menu";
 import Cart from "./Cart";
@@ -16,11 +17,27 @@ const App = () => {
     }));
   };
 
+  const updateItemCount = (name, countChange) => {
+    setCartItems((prevCart) => {
+      const updatedCount = (prevCart[name]?.count || 0) + countChange;
+      if (updatedCount <= 0) {
+        const { [name]: _, ...rest } = prevCart; // 아이템 제거
+        return rest;
+      }
+      return {
+        ...prevCart,
+        [name]: { ...prevCart[name], count: updatedCount },
+      };
+    });
+  };
+
+
+
   return (
     <div className={styles.app}>
       <h1>🕋✨루나의 별다방✨🕋</h1>
       <Menu addToCart={addToCart} />
-      <Cart cartItems={cartItems} />
+      <Cart cartItems={cartItems} updateItemCount={updateItemCount} />
     </div>
   );
 };

@@ -1,5 +1,24 @@
 .cartItem {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
+  gap: 24px;
+}
+.cartItem span:first-of-type {
+  flex: 1;
+}
+.cartItem span:last-of-type {
+  flex: 0 0 100px;
+  text-align: right;
+}
+.cartItem button {
+  background: none;
+  padding: 4px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.cartItem button:hover {
+  background: #ddd;
 }

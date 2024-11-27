@@ -1,7 +1,9 @@
 .menu {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   width: 70%;
+  min-width: 960px;
   margin-bottom: 20px;
   gap: 24px;
 }
