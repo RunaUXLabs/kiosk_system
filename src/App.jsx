@@ -64,7 +64,7 @@ const App = () => {
 
   return (
     <div className={styles.app}>
-      <h1>🕋✨루나의 별다방✨🕋</h1>
+      <h1>🕋✨React로 만든 루나의 별다방✨🕋</h1>
       <Menu addToCart={addToCart} />
       <Cart cartItems={cartItems} setCartItems={setCartItems} updateItemCount={updateItemCount} />
     </div>
