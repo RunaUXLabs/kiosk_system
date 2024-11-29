@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import styles from "./css/CartItem.module.css";
+import styles from "../css/CartItem.module.css";
 
 const CartItem = ({ name, price, count, updateItemCount }) => {
 

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import CartItem from "./CartItem";
-import styles from "./css/Cart.module.css";
+import styles from "../css/Cart.module.css";
 
 
 const Cart = ({ cartItems, setCartItems, updateItemCount }) => {

@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
-import Menu from "./Menu";
-import Cart from "./Cart";
+import Menu from "./component/Menu";
+import Cart from "./component/Cart";
 import styles from "./css/App.module.css";
 
 const App = () => {

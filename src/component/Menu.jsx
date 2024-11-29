@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import MenuItem from "./MenuItem";
-import styles from "./css/Menu.module.css";
+import styles from "../css/Menu.module.css";
 
 const menuData = [
   {
