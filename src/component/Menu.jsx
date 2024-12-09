@@ -1,38 +1,50 @@
 /* eslint-disable react/prop-types */
+// 외부 menuData
+import menuData from "../data/menuData";
+
+// swiper lib 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from 'swiper/modules';
+import "swiper/css"; // Swiper 기본 스타일
+import "swiper/css/pagination"; // 페이지네이션 스타일
+
+import { useState } from "react";
 import MenuItem from "./MenuItem";
 import styles from "../css/Menu.module.css";
 
-const menuData = [
-  {
-    name: "라벤더 카페 브레베",
-    engName: "Lavender Cafe Breve",
-    price: 7000,
-    description: "진한 리저브 에스프레소 샷과 라벤더 향이 어우러진 부드럽고 세련된 풍미.",
-    img: "20220412083026158.png",
-    // MenuItem에서 import.meta.url 사용할거라, assets까지의 디렉토리 주소는 입력됨, 그 아래의 경로를 적는다.
-  },
-  {
-    name: "스파클링 시트러스 에스프레소",
-    engName: "Sparkling Citrus Espresso",
-    price: 7500,
-    description: "리저브 에스프레소에 상큼한 레몬과 진저에일을 더한 청량감 넘치는 커피.",
-    img: "20210322093318028.jpg",
-  },
-  {
-    name: "라즈베리 쇼콜라",
-    engName: "Raspberry chocolate Cake",
-    price: 5900,
-    description: "초콜릿 케이크 사이에 라즈베리를 올린 진하고 묵직한 초콜릿 케이크.",
-    img: "20210325161742703.jpg",
-  },
-];
-
 const Menu = ({ addToCart }) => {
+  const categorys = ["all", "coffee", "food"];
+  const [filter, setFilter] = useState("all"); // 전체메뉴 출력으로 상태값 반영
+  const filteredMenu = filter === "all" ? menuData : menuData.filter((item) => item.category === filter);
+
   return (
     <div className={styles.menu}>
-      {menuData.map((item) => (
-        <MenuItem key={item.name} {...item} addToCart={addToCart} />
-      ))}
+      {/* 메뉴 카테고리 버튼 */}
+      <div className={styles.buttons}>
+        {categorys.map((category) => (
+          <button
+            key={category}
+            onClick={() => setFilter(category)}
+            className={`${filter === category ? styles.active : ""}`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      {/* 메뉴 캐러셀 구성 - swiper */}
+      <Swiper
+        spaceBetween={8}
+        slidesPerView={3}
+        pagination={true} modules={[Pagination]}
+        className={styles.menuSwiper}
+      >
+        {filteredMenu.map((item) => (
+          <SwiperSlide key={item.name}>
+            <MenuItem {...item} addToCart={addToCart} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

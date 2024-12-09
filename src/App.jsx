@@ -16,7 +16,7 @@ const App = () => {
   }, [cartItems]);
 
   /**
-   * 
+   * Create
    * @param {*} name 메뉴명
    * @param {*} price 가격
    */
@@ -31,7 +31,7 @@ const App = () => {
   };
 
   /**
-   * 
+   * Update
    * @param {*} name 메뉴명 
    * @param {*} countChange 변경된 숫자
    */

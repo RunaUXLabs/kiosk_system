@@ -1,3 +1,11 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css');
+/* 프리텐다드 폰트 */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 :root {
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -11,16 +19,16 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #533566;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #432953;
 }
 
 body {
-  margin: 0;
   display: flex;
+  justify-content: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -43,7 +51,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #533566;
 }
 button:focus,
 button:focus-visible {
