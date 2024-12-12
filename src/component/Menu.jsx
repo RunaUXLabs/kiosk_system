@@ -7,7 +7,7 @@ import { Badge } from 'antd';
 
 // swiper lib 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import "swiper/css"; // Swiper 기본 스타일
 import "swiper/css/pagination"; // 페이지네이션 스타일
 
@@ -62,7 +62,9 @@ const Menu = ({ addToCart }) => {
       <Swiper
         spaceBetween={8}
         slidesPerView={3}
-        pagination={true} modules={[Pagination]}
+        pagination={{ type: 'progressbar' }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
         className={styles.menuSwiper}
       >
         {/* 필터링 된 메뉴별로 슬라이드 구성 */}

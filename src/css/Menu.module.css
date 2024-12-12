@@ -21,7 +21,7 @@
 .menuSwiper {
   width: 100%;
   height: 440px;
-  padding: 0 0 20px 0;
+  padding: 8px 0 0 0;
   /* 스와이퍼 페이지네이션 여백값 확보용 */
   --swiper-theme-color: #F9C23C;
   /* 스와이퍼 테마컬러 변경 */
